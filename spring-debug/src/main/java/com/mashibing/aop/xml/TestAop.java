@@ -1,6 +1,6 @@
-package com.mashibing.aop;
+package com.mashibing.aop.xml;
 
-import com.mashibing.aop.service.MyCalculator;
+import com.mashibing.aop.xml.service.MyCalculator;
 import org.springframework.cglib.core.DebuggingClassWriter;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,7 +11,7 @@ import java.util.Properties;
 public class TestAop {
 
     public static void main(String[] args) throws Exception {
-//        saveGeneratedCGlibProxyFiles(System.getProperty("user.dir")+"/proxy");
+        saveGeneratedCGlibProxyFiles(System.getProperty("user.dir")+"/proxy");
         ApplicationContext ac = new ClassPathXmlApplicationContext("aop.xml");
         MyCalculator bean = ac.getBean(MyCalculator.class);
         bean.add(1,1);
