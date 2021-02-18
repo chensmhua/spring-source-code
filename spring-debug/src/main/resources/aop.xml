@@ -7,11 +7,11 @@
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd
 ">
-    <bean id="logUtil" class="com.mashibing.aop.xml.util.LogUtil"></bean>
-    <bean id="myCalculator" class="com.mashibing.aop.xml.service.MyCalculator" ></bean>
+    <bean id="logUtil" class="com.chenhd.aop.xml.util.LogUtil"></bean>
+    <bean id="myCalculator" class="com.chenhd.aop.xml.service.MyCalculator" ></bean>
     <aop:config>
         <aop:aspect ref="logUtil">
-            <aop:pointcut id="myPoint" expression="execution( Integer com.mashibing.aop.xml.service.MyCalculator.*(..))"/>
+            <aop:pointcut id="myPoint" expression="execution( Integer com.chenhd.aop.xml.service.MyCalculator.*(..))"/>
             <aop:after-returning method="stop" pointcut-ref="myPoint" returning="result"></aop:after-returning>
             <aop:before method="start" pointcut-ref="myPoint"></aop:before>
             <aop:after-throwing method="logException" pointcut-ref="myPoint" throwing="e"></aop:after-throwing>
